@@ -3,103 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minha Página</title>
+    <title>Informação de Manutenção</title>
+    <!-- Adicionando Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Adicionando FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            scroll-behavior: smooth; /* Adicionando a transição suave */
+            min-height: 100vh; /* Definindo a altura mínima do corpo da página */
+            position: relative; /* Faz com que o corpo seja um contexto relativo */
+            margin-bottom: 0; /* Removendo a margem inferior */
+            background-color: #f8f9fa; /* Cor de fundo do corpo da página */
         }
         header {
-            background-color: #333;
+            background-color: #0949b5; /* Azul escuro para o cabeçalho */
             color: #fff;
             padding: 20px 0;
-            text-align: center;
-        }
-        nav {
-            background-color: #444;
-            padding: 10px 0;
             text-align: center;
         }
         nav a {
             color: #fff;
             text-decoration: none;
-            margin: 0 15px;
         }
         nav a:hover {
             text-decoration: underline;
         }
         section {
-            display: none; /* Oculta todas as seções por padrão */
             padding: 20px;
+            display: none; /* Oculta todas as seções por padrão */
+        }
+        .maintenance-section {
+            display: flex; /* Centraliza os elementos horizontalmente */
+            justify-content: center; /* Centraliza os elementos verticalmente */
+            align-items: center; /* Centraliza os elementos verticalmente */
+            text-align: center;
+            height: 100vh; /* Centraliza verticalmente a mensagem */
+        }
+        .maintenance-message {
+            font-size: 24px;
+            font-family: "Arial Black", sans-serif; /* Altera a fonte da mensagem */
+            color: #000; /* Cor do texto preto */
+            background-color: #444; /* Tom mais escuro de cinza para o fundo da mensagem */
+            padding: 20px; /* Adicionando preenchimento para espaçamento interno */
+            border-radius: 10px; /* Adicionando bordas arredondadas */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adicionando sombra suave */
         }
         footer {
-            background-color: #333;
+            background-color: #0949b5; /* Azul escuro para o rodapé */
             color: #fff;
             text-align: center;
             padding: 20px 0;
-            position: fixed;
-            bottom: 0;
             width: 100%;
+            position: absolute; /* Torna o rodapé posicionado de forma absoluta */
+            bottom: 0; /* Fixa o rodapé na parte inferior da página */
+            left: 0; /* Alinha o rodapé à esquerda */
+        }
+        .icon {
+            color: #000; /* Cor do ícone preto */
+            font-size: 36px;
+            margin-bottom: 20px;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Minha Página</h1>
-        <img src="caminho_para_sua_imagem.jpg" alt="Imagem de cabeçalho">
+        <img src="img/logo-tag-calibracoes-branco.png" alt="Imagem de cabeçalho">
     </header>
-    <nav>
-        <a href="#home">HOME</a>
-        <a href="#empresa">EMPRESA</a>
-        <a href="#laboratorios">LABORATÓRIOS</a>
-        <a href="#servicos">SERVIÇOS</a>
-        <a href="#contatos">CONTATOS</a>
-    </nav>
-    <section id="home">
-        <h2>Seja bem-vindo à nossa página!</h2>
-        <!-- Conteúdo da página inicial -->
-    </section>
-    <section id="empresa">
-        <h2>Sobre a nossa empresa</h2>
-        <!-- Conteúdo sobre a empresa -->
-    </section>
-    <section id="laboratorios">
-        <h2>Nossos laboratórios</h2>
-        <!-- Conteúdo sobre os laboratórios -->
-    </section>
-    <section id="servicos">
-        <h2>Nossos serviços</h2>
-        <!-- Conteúdo sobre os serviços -->
-    </section>
-    <section id="contatos">
-        <h2>Entre em contato conosco</h2>
-        <!-- Formulário de contato ou informações de contato -->
+    <section class="maintenance-section">
+        <div class="container">
+            <div class="maintenance-message">
+                <i class="fas fa-exclamation-triangle icon"></i>
+                <p>Desculpe-nos pelo transtorno.</p>
+                <p>Estamos realizando uma manutenção no momento.</p>
+                <p>Por favor, tente novamente mais tarde.</p>
+            </div>
+        </div>
     </section>
     <footer>
-        &copy; 2024 Minha Empresa
+        <div class="container">
+            &copy; 2024 Minha Empresa
+        </div>
     </footer>
-    <script>
-        // JavaScript para exibir apenas a seção correspondente ao link clicado
-        const links = document.querySelectorAll('nav a');
-        const sections = document.querySelectorAll('section');
-
-        links.forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-
-                // Oculta todas as seções
-                sections.forEach(section => {
-                    section.style.display = 'none';
-                });
-
-                // Exibe a seção correspondente ao link clicado
-                const targetId = link.getAttribute('href').substring(1);
-                const targetSection = document.getElementById(targetId);
-                targetSection.style.display = 'block';
-            });
-        });
-    </script>
 </body>
 </html>
