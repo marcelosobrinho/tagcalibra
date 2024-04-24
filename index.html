@@ -15,12 +15,23 @@
             margin: 0;
             padding-bottom: 60px; /* Adiciona espaço para o rodapé */
         }
+
         header {
             background-color: #0949b5; /* Azul escuro para o cabeçalho */
             color: #fff;
-            padding: 20px 0;
+            padding: 50px 15px; /* Adiciona padding nos lados */
             text-align: center;
+            position: relative; /* Define a posição relativa para o cabeçalho */
         }
+
+        .logo {
+            position: absolute; /* Define a posição absoluta para a logo */
+            left: 15px; /* Alinha a logo à esquerda */
+            top: 50%; /* Alinha a logo verticalmente ao centro */
+            transform: translateY(-50%); /* Corrige o alinhamento vertical */
+            max-width: 150px; /* Define a largura máxima da imagem */
+        }
+
         .maintenance-section {
             display: flex; /* Centraliza os elementos horizontalmente */
             justify-content: center; /* Centraliza os elementos verticalmente */
@@ -28,6 +39,7 @@
             text-align: center;
             padding: 20px;
         }
+
         .maintenance-message {
             font-size: 24px;
             font-family: "Arial Black", sans-serif; /* Altera a fonte da mensagem */
@@ -39,6 +51,7 @@
             width: 100%; /* Ocupa toda a largura disponível */
             max-width: 600px; /* Define uma largura máxima para a mensagem */
         }
+
         footer {
             background-color: #0949b5; /* Azul escuro para o rodapé */
             color: #fff;
@@ -48,6 +61,7 @@
             width: 100%; /* Ocupa toda a largura disponível */
             bottom: 0; /* Alinha o rodapé na parte inferior */
         }
+
         .icon {
             color: #000; /* Cor do ícone preto */
             font-size: 36px;
@@ -57,7 +71,7 @@
 </head>
 <body>
     <header>
-        <img src="img/logo-tag-calibracoes-branco.png" alt="Imagem de cabeçalho" class="img-fluid">
+        <img src="img/logo-tag-calibracoes-branco.png" alt="Imagem de cabeçalho" class="logo">
     </header>
     <section class="maintenance-section">
         <div class="container">
