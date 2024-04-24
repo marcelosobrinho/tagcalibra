@@ -11,9 +11,6 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            min-height: 100vh; /* Definindo a altura mínima do corpo da página */
-            position: relative; /* Faz com que o corpo seja um contexto relativo */
-            margin-bottom: 0; /* Removendo a margem inferior */
             background-color: #f8f9fa; /* Cor de fundo do corpo da página */
         }
         header {
@@ -22,23 +19,12 @@
             padding: 20px 0;
             text-align: center;
         }
-        nav a {
-            color: #fff;
-            text-decoration: none;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        section {
-            padding: 20px;
-            display: none; /* Oculta todas as seções por padrão */
-        }
         .maintenance-section {
             display: flex; /* Centraliza os elementos horizontalmente */
             justify-content: center; /* Centraliza os elementos verticalmente */
             align-items: center; /* Centraliza os elementos verticalmente */
             text-align: center;
-            height: 100vh; /* Centraliza verticalmente a mensagem */
+            padding: 20px;
         }
         .maintenance-message {
             font-size: 24px;
@@ -48,16 +34,14 @@
             padding: 20px; /* Adicionando preenchimento para espaçamento interno */
             border-radius: 10px; /* Adicionando bordas arredondadas */
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adicionando sombra suave */
+            width: 100%; /* Ocupa toda a largura disponível */
+            max-width: 600px; /* Define uma largura máxima para a mensagem */
         }
         footer {
             background-color: #0949b5; /* Azul escuro para o rodapé */
             color: #fff;
             text-align: center;
             padding: 20px 0;
-            width: 100%;
-            position: absolute; /* Torna o rodapé posicionado de forma absoluta */
-            bottom: 0; /* Fixa o rodapé na parte inferior da página */
-            left: 0; /* Alinha o rodapé à esquerda */
         }
         .icon {
             color: #000; /* Cor do ícone preto */
@@ -68,15 +52,19 @@
 </head>
 <body>
     <header>
-        <img src="img/logo-tag-calibracoes-branco.png" alt="Imagem de cabeçalho">
+        <img src="img/logo-tag-calibracoes-branco.png" alt="Imagem de cabeçalho" class="img-fluid">
     </header>
     <section class="maintenance-section">
         <div class="container">
-            <div class="maintenance-message">
-                <i class="fas fa-exclamation-triangle icon"></i>
-                <p>Desculpe-nos pelo transtorno.</p>
-                <p>Estamos realizando uma manutenção no momento.</p>
-                <p>Por favor, tente novamente mais tarde.</p>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="maintenance-message">
+                        <i class="fas fa-exclamation-triangle icon"></i>
+                        <p>Desculpe-nos pelo transtorno.</p>
+                        <p>Estamos realizando uma manutenção no momento.</p>
+                        <p>Por favor, tente novamente mais tarde.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -85,5 +73,9 @@
             &copy; 2024 Minha Empresa
         </div>
     </footer>
+
+    <!-- Adicionando jQuery e Bootstrap JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
