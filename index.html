@@ -3,98 +3,396 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Informação de Manutenção</title>
+    <title>Minha Página</title>
     <!-- Adicionando Bootstrap -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Adicionando FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f8f9fa; /* Cor de fundo do corpo da página */
             margin: 0;
-            padding-bottom: 60px; /* Adiciona espaço para o rodapé */
+            padding-top: 100px; /* Espaço para o cabeçalho */
+            color: #205081; /* Cor da fonte em todo o site */
         }
 
         header {
-            background-color: #0949b5; /* Azul escuro para o cabeçalho */
+            background-color: #0949b5;
             color: #fff;
-            padding: 50px 15px; /* Adiciona padding nos lados */
-            text-align: center;
-            position: relative; /* Define a posição relativa para o cabeçalho */
+            padding: 15px;
+            text-align: left;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .logo {
-            position: absolute; /* Define a posição absoluta para a logo */
-            left: 15px; /* Alinha a logo à esquerda */
-            top: 50%; /* Alinha a logo verticalmente ao centro */
-            transform: translateY(-50%); /* Corrige o alinhamento vertical */
-            max-width: 150px; /* Define a largura máxima da imagem */
+            max-width: 100px;
         }
 
-        .maintenance-section {
-            display: flex; /* Centraliza os elementos horizontalmente */
-            justify-content: center; /* Centraliza os elementos verticalmente */
-            align-items: center; /* Centraliza os elementos verticalmente */
-            text-align: center;
+        .logo-img {
+            width: 210px;
+            height: 210px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+            nav a {
+                color: #fff;
+                text-decoration: none;
+                margin-left: 15px;
+            }
+
+                nav a:hover {
+                    text-decoration: underline;
+                }
+
+        section {
             padding: 20px;
-        }
-
-        .maintenance-message {
-            font-size: 24px;
-            font-family: "Arial Black", sans-serif; /* Altera a fonte da mensagem */
-            color: #000; /* Cor do texto preto */
-            background-color: #444; /* Tom mais escuro de cinza para o fundo da mensagem */
-            padding: 20px; /* Adicionando preenchimento para espaçamento interno */
-            border-radius: 10px; /* Adicionando bordas arredondadas */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adicionando sombra suave */
-            width: 100%; /* Ocupa toda a largura disponível */
-            max-width: 600px; /* Define uma largura máxima para a mensagem */
+            display: none; /* Oculta todas as seções por padrão */
         }
 
         footer {
-            background-color: #0949b5; /* Azul escuro para o rodapé */
+            background-color: #0949b5;
             color: #fff;
             text-align: center;
             padding: 20px 0;
-            position: fixed; /* Fixa o rodapé na parte inferior da tela */
-            width: 100%; /* Ocupa toda a largura disponível */
-            bottom: 0; /* Alinha o rodapé na parte inferior */
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            left: 0;
         }
 
-        .icon {
-            color: #000; /* Cor do ícone preto */
-            font-size: 36px;
-            margin-bottom: 20px;
+        .image-container {
+            position: relative;
+            width: 100%;
+        }
+
+            .image-container img {
+                width: 100%;
+                height: auto;
+                display: block;
+                border-radius: 8px; /* Bordas arredondadas */
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+                transition: transform 0.3s ease; /* Transição suave para transformações */
+            }
+
+            .image-container:hover img {
+                transform: scale(1.05); /* Efeito de escala ao passar o mouse */
+            }
+
+        .image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.7); /* Fundo semi-transparente */
+            color: #fff;
+            opacity: 0;
+            transition: opacity 0.3s ease; /* Transição suave para a opacidade */
+        }
+
+            .image-overlay p {
+                text-align: center;
+                margin: 0;
+                padding: 20px;
+            }
+
+        .image-container:hover .image-overlay {
+            opacity: 1; /* Mostra a sobreposição ao passar o mouse */
         }
     </style>
 </head>
 <body>
     <header>
+
         <img src="img/logo-tag-calibracoes-branco.png" alt="Imagem de cabeçalho" class="logo">
+       
+        <nav>
+            <a class="nav-link" href="#home">HOME</a>
+            <a class="nav-link" href="#empresa">EMPRESA</a>
+            <a class="nav-link" href="#servicos">SERVIÇOS</a>
+            <a class="nav-link" href="#contatos">CONTATOS</a>
+        </nav>
+         <div class="header-contact">
+     <span>
+         <i class="fas fa-envelope"></i>rafael@tagcalibra.com.br
+     </span>
+     <span>
+         <i class="fas fa-phone"></i> (43) 9 9189-6282
+     </span>
+ </div>
     </header>
-    <section class="maintenance-section">
+    <section id="home" class="page-section home-section">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-8">
-                    <div class="maintenance-message">
-                        <i class="fas fa-exclamation-triangle icon"></i>
-                        <p>Desculpe-nos pelo transtorno.</p>
-                        <p>Estamos realizando uma manutenção no momento.</p>
-                        <p>Por favor, tente novamente mais tarde.</p>
+            <h2 class="text-center mb-4">Sobre Nós</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow">
+                        <div class="card-body">
+                            <h3 class="card-title">Missão</h3>
+                            <p class="card-text text-justify">Oferecer serviços de calibração in-loco e soluções industriais de qualidade, superando as expectativas dos clientes com profissionalismo e comprometimento.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow">
+                        <div class="card-body">
+                            <h3 class="card-title">Visão</h3>
+                            <p class="card-text text-justify">Ser reconhecida como líder no mercado de calibração, engenharia, inspeção industrial e serviços industriais, mantendo um padrão de excelência e inovação constante.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow">
+                        <div class="card-body">
+                            <h3 class="card-title">Valores</h3>
+                            <p class="card-text text-justify">Compromisso com a qualidade, busca contínua pelo conhecimento, satisfação do cliente, responsabilidade social e ambiental, segurança e valorização dos colaboradores.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h2 class="text-center mb-4">Serviços</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <p class="card-text"> Serviço 1</p>
+                    <div class="image-container">
+                        <img src="img/quem.png" alt="Logo Cliente 1">
+                        <div class="image-overlay">
+                            <p>Descrição do Cliente 1</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="image-container">
+                        <p class="card-text"> Serviço 1</p>
+                        <img src="img/quem.png" alt="Logo Cliente 2">
+                        <div class="image-overlay">
+                            <p>Descrição do Cliente 2</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="image-container">
+                        <p class="card-text"> Serviço 1</p>
+                        <img src="img/quem.png" alt="Logo Cliente 3">
+                        <div class="image-overlay">
+                            <p>Descrição do Cliente 3</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h2 class="text-center mb-4">Notícias</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow">
+                        <div class="card-body">
+                            <h3 class="card-title">Notícias</h3>
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/V4b2sS0b6pM" allowfullscreen></iframe>
+                            </div>
+                            <p class="card-text">Calibração de instrumentos</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow">
+                        <div class="card-body">
+                            <h3 class="card-title">Notícias</h3>
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/emsV40SAPyM" allowfullscreen></iframe>
+                            </div>
+                            <p class="card-text">Como funciona um manômetro?</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow">
+                        <div class="card-body">
+                            <h3 class="card-title">Notícias</h3>
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/WMYGO5N315c" allowfullscreen></iframe>
+                            </div>
+                            <p class="card-text"> Importância da Verificação Intermediária</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <h2 class="text-center mb-4">Nossos Clientes</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <img src="img/1.jpg" alt="Logo Cliente 1" class="logo-img">
+                </div>
+                <div class="col-md-4 mb-4">
+                    <img src="img/2.jpg" alt="Logo Cliente 2" class="logo-img">
+                </div>
+                <div class="col-md-4 mb-4">
+                    <img src="img/3.jpg" alt="Logo Cliente 3" class="logo-img">
+                </div>
+                <div class="col-md-4 mb-4">
+                    <img src="img/4.jpeg" alt="Logo Cliente 4" class="logo-img">
+                </div>
+                <div class="col-md-4 mb-4">
+                    <img src="img/5.jpg" alt="Logo Cliente 5" class="logo-img">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section id="empresa" class="page-section">
+
+        <div class="container">
+            <h2 class="text-center mb-4">Quem Somos</h2>
+            <div class="row">
+                <div class="col-md-12 mb-4">
+                    <div class="card h-100 shadow">
+                        <div class="card-body">
+                            <h3 class="card-title">Descrição</h3>
+                            <p class="card-text">
+                                Somos uma empresa especializada em serviços de calibração in-loco, com emissão de certificados rastreados em Manômetros, Termômetros, Válvulas de Segurança, Luxímetros, Controladores de Temperaturas, Decibelímetros, PHmetros, Transmissores de Temperatura, Transmissores de Pressão, Termostatos, Pressostatos e outros equipamentos, além de Livro de identificação de equipamentos calibrados e Identificação com placa de alumínio para cada instrumento, com lacres de inox.
+                                <br><br>
+                                Políticas de Qualidade:
+                                Aqui na TAG nos comprometemos em atender com qualidade e eficiência, e de forma direta na real necessidade dos nossos clientes, através de colaboradores qualificados e processos bem definidos, atendendo aos requisitos e normas especificadas, e buscando a melhoria e satisfação continua dos nossos clientes e parceiros.
+                                <br><br>
+                                Visão:
+                                Se tornar uma empresa referencia no mercado nos segmentos de Calibração, Engenharia, Inspeção Industrial e Serviços Industriais.
+                                <br><br>
+                                Valores:
+                                Honrar com os nossos compromissos, assegurar a qualidade dos serviços prestados, priorizar a busca de conhecimento continuo e sempre buscar a satisfação de nossos clientes.
+                                <br>
+                                Agir com responsabilidade social e legal, de forma preventiva para a proteção do meio ambiente.
+                                <br>
+                                Proporcionar segurança e qualidade de vida aos funcionários, valorizando a confiança, lealdade e ética profissional.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <section id="servicos" class="page-section">
+        <div class="container">
+            <h2 class="text-center mb-4">Serviços</h2>
+            <div class="row">
+                <div class="col-md-12 mb-4">
+                    <div class="card h-100 shadow">
+                        <div class="card-body">
+                            <h3 class="card-title">Gestão de Fornecimentos</h3>
+                            <p class="card-text">
+                                Os Serviços de Gestão de Fornecimentos da TAG garantem o conteúdo de informações necessárias para o acompanhamento de seu projeto, assegurando o controle das entregas de seus fornecedores.
+                                <br><br>
+                                Com uma grande quantidade de fornecedores envolvidos na sua cadeia de fornecimento, é um desafio manter seus projetos dentro do prazo. O atraso na entrega de materiais, produtos ou equipamentos impede que seus projetos sejam concluídos dentro do prazo e do orçamento. Nossos serviços de Diligenciamento – Gestão de Fornecimento garantem o acesso às informações necessárias para o acompanhamento de seus projetos, assegurando o controle total das entregas de seus fornecedores.
+                                <br><br>
+                                Porque usar os Serviços de Fornecimentos da TAG?
+                                <br>
+                                Nossos profissionais qualificados oferecem a experiência, a competência, o conhecimento e a eficácia de que você necessita para garantir que seu projeto continue dentro do prazo. Obtemos e reiteramos as promessas de entrega de seus fornecedores. Além disso, investigamos todos os aspectos de sua programação para garantir que eles cumpram as suas obrigações contratuais e entreguem na hora programada. Emitimos relatórios gerenciais que permitem o monitoramento e controle das atividades envolvidas em cada entrega. Apresentando inclusive uma gama de informações que permitem a projeção de prazos futuros, identificação prévia de desvios, planos de ação para recuperação de possíveis desvios mantendo os prazos e condições de entregas previstas em cronogramas, além de permitir a rápida tomada de decisão das partes interessadas do projeto em questão. Nossos serviços de Gestão de Fornecimento abrangem todas as fases do seu processo de produção, permitindo:
+                                <ul>
+                                    <li>Acompanhar o andamento do seu projeto com relatórios status personalizados para atender suas necessidades específicas. Relatórios esses contendo informações de atividades desenvolvidas em períodos passados, assim como atividades previstas para períodos futuros, com os respectivos avanços físicos obtidos e esperados;</li>
+                                    <li>Identificar as áreas que podem causar potenciais atrasos. Se ocorrerem atrasos, implementamos rápidas contramedidas para ajudá-lo a evitar novos adiamentos;</li>
+                                    <li>Garantir que os materiais e equipamentos sejam monitorados até sua entrega a tempo e dentro dos prazos contratuais.</li>
+                                </ul>
+                                Nossos serviços de Gestão de Fornecimento incluem:
+                                <ul>
+                                    <li>Coordenação de diligenciamento com todos os fornecedores;</li>
+                                    <li>Monitoramento do envio de material;</li>
+                                    <li>Visitas de diligenciamento;</li>
+                                    <li>Recomendações para medidas necessárias;</li>
+                                    <li>Relatórios gerenciais;</li>
+                                    <li>Monitoramento e controle das atividades desenvolvidas pelos fornecedores;</li>
+                                    <li>Simulação de cenários baseados em medidas de controle;</li>
+                                    <li>Avaliação da situação para o seu projeto global;</li>
+                                    <li>Monitoramento de desempenho do fornecedor.</li>
+                                </ul>
+                                Contate-nos hoje para descobrir como nossos serviços de Diligenciamento – Gestão de Fornecimento podem ajudá-lo a manter o seu projeto dentro do cronograma e garantir o controle total de seus fornecedores.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    <section id="contatos" class="page-section">
+        <div class="container">
+            <h2 class="text-center mb-4">Entre em contato conosco</h2>
+
+            <!-- Mapa do Google -->
+            <div class="google-map">
+                <!-- Incorporação do mapa do Google com base no endereço fornecido -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3693.7022844235954!2d-51.19831268557724!3d-23.287822154749116!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94e8346198be36ed%3A0x5e441e62df53d01e!2sR.%20Araca%C3%BAba%2C%20233%20-%20Jardim%20Santa%20Rita%2C%20Londrina%20-%20PR%2C%2086041-560%2C%20Brasil!5e0!3m2!1spt-BR!2sus!4v1621246986347!5m2!1spt-BR!2sus" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+
+            <!-- Endereço por escrito -->
+            <div class="address text-center mt-4">
+                <p>Rua Aracaúba, 233 - Jardim Santa Rita</p>
+                <p>Londrina - PR, 86041-560</p>
+            </div>
+
+            <!-- Informações de contato -->
+            <div class="contact-info mt-4">
+                <div class="row justify-content-center">
+                    <div class="col-md-4">
+                        <div class="contact-item">
+                            <h4 class="text-center">Email</h4>
+                            <p class="text-center"><a href="mailto:rafael@tagcalibra.com.br">rafael@tagcalibra.com.br</a></p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="contact-item">
+                            <h4 class="text-center">Telefone</h4>
+                            <p class="text-center"><a href="tel:+5543991896282">(43) 9 9189-6282</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Botão para entrar em contato via WhatsApp -->
+            <!-- Botões de contato -->
+            <div class="contact-buttons text-center mt-4">
+                <a href="mailto:rafael@tagcalibra.com.br" class="btn btn-primary mr-2">Email</a>
+                <a href="https://api.whatsapp.com/send?phone=5543991896282" target="_blank" class="btn btn-success mr-2">WhatsApp</a>
+                <a href="https://www.google.com/maps/dir//Rua+Araca%C3%BAba,+233+-+Jardim+Santa+Rita,+Londrina+-+PR,+86041-560,+Brasil" target="_blank" class="btn btn-info">Localização</a>
+            </div>
+
+
+        </div>
+    </section>
     <footer>
         <div class="container">
-            &copy; 2024 Minha Empresa
+            &copy; 2024 Tag Calibra
         </div>
     </footer>
-
     <!-- Adicionando jQuery e Bootstrap JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // JavaScript para exibir apenas a seção correspondente ao link clicado
+        $(document).ready(function () {
+            $('nav a').on('click', function () {
+                var target = $(this).attr('href');
+                $('.page-section').hide();
+                $(target).fadeIn();
+            });
+            $(document).ready(function () {
+                $('#home').fadeIn(); // Exibe a seção "Home"
+            });
+        });
+    </script>
 </body>
 </html>
